@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: hello
+  namespace: hello_world_app
+spec:
+  replicas: 1
+  template:
+  metadata:
+    labels:
+  spec:
+    containers:
+    - name: hello_container
+      image: nodas/hello-world-app:latest
+      imagePullPolicy: "IfNotPresent"
+      ports:
+      - containerPort: 5000
+      
