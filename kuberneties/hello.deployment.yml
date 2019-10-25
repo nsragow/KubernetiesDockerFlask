@@ -1,17 +1,22 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
-  namespace: hello_world_app
+  name: hello-deployment
+  labels:
+    app: helloapp
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: helloapp
   template:
-  metadata:
-    labels:
-  spec:
-    containers:
-    - name: hello_container
-      image: nodas/hello-world-app:latest
-      imagePullPolicy: "IfNotPresent"
-      ports:
-      - containerPort: 5000
+    metadata:
+      labels:
+        app: helloapp
+    spec:
+      containers:
+      - name: hello-container
+        image: nodas/hello-world-app:latest
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 5000
