@@ -1,1 +1,3 @@
-Description: Practice AWS YAML config file 
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: Practice AWS YAML config file
