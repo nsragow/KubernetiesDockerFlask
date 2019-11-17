@@ -1,10 +1,10 @@
 eksctl create cluster \
---name prod \
+--name aws-cluster-stocks \
 --version 1.14 \
---region us-west-2 \
+--region us-east-2 \
 --nodegroup-name standard-workers \
---node-type t3.medium \
---nodes 3 \
+--node-type t2.micro \
+--nodes 1 \
 --nodes-min 1 \
---nodes-max 4 \
+--nodes-max 1 \
 --node-ami auto
