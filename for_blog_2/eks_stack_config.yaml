@@ -1,3 +1,14 @@
 AWSTemplateFormatVersion: "2010-09-09"
 
 Description: Practice AWS YAML config file
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: String
+      EnableDnsHostnames: Boolean
+      EnableDnsSupport: Boolean
+      InstanceTenancy: String
+      Tags:
+        - Tag
